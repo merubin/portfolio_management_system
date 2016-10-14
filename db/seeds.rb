@@ -14,7 +14,7 @@ user1 = User.create!({
   userid: "merubin",
   password: "password",
   email:"mike@rubinsworld.com",
-  avaitar_url:"http://mike-rubin.com/images/nav/id/rubin_selfie_270.png"
+  avatar_url:"http://mike-rubin.com/images/nav/id/rubin_selfie_270.png"
 })
 
 user2 = User.create!({
@@ -22,11 +22,11 @@ user2 = User.create!({
   userid: "jshawl",
   password: "password",
   email:"jesse@jshawl.com",
-  avaitar_url:"https://pbs.twimg.com/profile_images/494612822740197377/4ldXwgN5_400x400.jpeg"
+  avatar_url:"https://pbs.twimg.com/profile_images/494612822740197377/4ldXwgN5_400x400.jpeg"
 })
 
 
-project1 = Project.create!({
+project1 = user1.projects.create!({
 name:"Mario's Match Game",
 header1:"Javascript Project",
 header2:"",
@@ -36,7 +36,7 @@ screen_img_url:"http://mike-rubin.com/images/portfolio/mariomemorygame.jpg",
 host_url:"http://www.rubinsworld.com/ga/memory/index.html"
 })
 
-project2 = Project.create!({
+project2 = user1.projects.create!({
 name:"My Business",
 header1:"www.my_business.com",
 header2:"",
@@ -45,7 +45,7 @@ screen_img_url:"http://mike-rubin.com/images/portfolio/rubin_biz.jpg",
 host_url:"http://www.rubinsworld.com/ga/html/merubin_business_site.html"
 })
 
-project3 = Project.create!({
+project3 = user1.projects.create!({
 name:"My Blog",
 header1:"www.my_blog.com",
 header2:"",
@@ -54,7 +54,7 @@ screen_img_url:"http://mike-rubin.com/images/portfolio/rubin_blog.jpg",
 host_url:"http://www.rubinsworld.com/ga/html/merubin_personal_blog.html"
 })
 
-project4 = Project.create!({
+project4 = user1.projects.create!({
 name:"My Personal Website",
 header1:"www.my_website.com",
 header2:"",
@@ -63,7 +63,7 @@ screen_img_url:"http://mike-rubin.com/images/portfolio/rubin_personal.jpg",
 host_url:"http://www.rubinsworld.com/ga/html/merubin_personal_web.html"
 })
 
-project5 = Project.create!({
+project5 = user2.projects.create!({
 name:"Traffic Light Javascript exercise",
 header1:"",
 header2:"",
@@ -72,7 +72,7 @@ screen_img_url:"http://mike-rubin.com/images/portfolio/trafficlight.jpg",
 host_url:"http://www.rubinsworld.com/ga/trafficlight/index.html"
 })
 
-project6 = Project.create!({
+project6 = user2.projects.create!({
 name:"ICY BIRDS",
 header1:"",
 header2:"",
@@ -82,21 +82,20 @@ host_url:"https://thawing-falls-93588.herokuapp.com/"
 })
 
 
-
-portfolio1 = Portfolio.create!({
+portfolio1 = user1.portfolios.create!({
 title:"Mike Rubin's Personal Portfolio",
 description:"Welcome to Mike Rubin's Web Development Portfolio. "
 })
 
-portfolio2 = Portfolio.create!({
-title:"Up Dog Web Hosting Portfolio",
-description:"Real. Simple.Hosting. Publish your own website for free using Dropbox. "
-})
+# portfolio2 = project5.portfolios.create!({
+# title:"Up Dog Web Hosting Portfolio",
+# description:"Real. Simple.Hosting. Publish your own website for free using Dropbox. ",user: user2, project: project5
+# })
+#
 
-
-project1.portfolio1.create(user: user1)
-project2.portfolio1.create(user: user1)
-project3.portfolio1.create(user: user1)
-project4.portfolio2.create(user: user2)
-project5.portfolio2.create(user: user2)
-project6.portfolio2.create(user: user2)
+# project1.portfolio1.create(user: user1)
+# project2.portfolio1.create(user: user1)
+# project3.portfolio1.create(user: user1)
+# project4.portfolio2.create(user: user2)
+# # project5.portfolio2.create(user: user2)
+# project6.portfolio2.create(user: user2)

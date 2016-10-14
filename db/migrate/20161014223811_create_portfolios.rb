@@ -4,7 +4,6 @@ class CreatePortfolios < ActiveRecord::Migration[5.0]
       t.string :title
       t.string :description
       t.references :user, foreign_key: true
-      t.references :project, foreign_key: true
 
       t.timestamps
     end

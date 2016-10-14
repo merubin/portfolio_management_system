@@ -4,10 +4,8 @@ one:
   title: MyString
   description: MyString
   user: one
-  project: one
 
 two:
   title: MyString
   description: MyString
   user: two
-  project: two

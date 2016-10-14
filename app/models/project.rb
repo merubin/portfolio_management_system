@@ -1,4 +1,6 @@
 class Project < ApplicationRecord
-  has_many :portfolios
-  has_many :users, through: :portfolios
+  belongs_to :user
+  has_many :project_portfolios
+  has_many :portfolios, through: :project_portfolios
+
 end

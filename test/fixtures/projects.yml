@@ -7,6 +7,7 @@ one:
   description: MyString
   screen_img_url: MyString
   host_url: MyString
+  user: one
 
 two:
   name: MyString
@@ -15,3 +16,4 @@ two:
   description: MyString
   screen_img_url: MyString
   host_url: MyString
+  user: two

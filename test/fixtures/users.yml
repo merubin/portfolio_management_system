@@ -5,11 +5,11 @@ one:
   userid: MyString
   password: MyString
   email: MyString
-  avaitar_url: MyString
+  avatar_url: MyString
 
 two:
   name: MyString
   userid: MyString
   password: MyString
   email: MyString
-  avaitar_url: MyString
+  avatar_url: MyString

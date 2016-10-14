@@ -7,6 +7,7 @@ class CreateProjects < ActiveRecord::Migration[5.0]
       t.string :description
       t.string :screen_img_url
       t.string :host_url
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
