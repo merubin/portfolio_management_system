@@ -5,9 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+ProjectPortfolio.destroy_all
 Project.destroy_all
-User.destroy_all
 Portfolio.destroy_all
+User.destroy_all
+
+
+ActiveRecord::Base.connection.reset_pk_sequence!('projects')
+ActiveRecord::Base.connection.reset_pk_sequence!('portfolios')
+ActiveRecord::Base.connection.reset_pk_sequence!('users')
+ActiveRecord::Base.connection.reset_pk_sequence!('project_portfolios')
+
 
 user1 = User.create!({
   name: "Mike Rubin",
@@ -81,34 +89,19 @@ screen_img_url:"https://res.cloudinary.com/general-assembly-profiles/image/uploa
 host_url:"https://thawing-falls-93588.herokuapp.com/"
 })
 
-project1.user_id = user1;
-project1.save
-
 portfolio1 = user1.portfolios.create!({
 title:"Mike Rubin's Personal Portfolio",
 description:"Welcome to Mike Rubin's Web Development Portfolio. "
 })
-#
-# projectPortfolio1=ProjectPortfolio.create!({
-#  project_id: project1.id,
-#   })
 
-# project1.portfolios.create(project_id:0)
-#
-# portfolio1 = user1.portfolios.create!({
-# title:"Mike Rubin's Personal Portfolio",
-# description:"Welcome to Mike Rubin's Web Development Portfolio. "
-# })
-#
-# # portfolio2 = project5.portfolios.create!({
-# title:"Up Dog Web Hosting Portfolio",
-# description:"Real. Simple.Hosting. Publish your own website for free using Dropbox. ",user: user2, project: project5
-# })
-#
+portfolio2 = user2.portfolios.create!({
+title:"Up Dog Web Hosting Portfolio",
+description:"Real. Simple.Hosting. Publish your own website for free using Dropbox. "
+})
 
-# project1.portfolio1.create(user: user1)
-# project2.portfolio1.create(user: user1)
-# project3.portfolio1.create(user: user1)
-# project4.portfolio2.create(user: user2)
-# # project5.portfolio2.create(user: user2)
-# project6.portfolio2.create(user: user2)
+pp1 = ProjectPortfolio.create(project: project1, portfolio: portfolio1)
+pp2 = ProjectPortfolio.create(project: project2, portfolio: portfolio1)
+pp3 = ProjectPortfolio.create(project: project3, portfolio: portfolio1)
+pp4 = ProjectPortfolio.create(project: project4, portfolio: portfolio1)
+pp5 = ProjectPortfolio.create(project: project5, portfolio: portfolio2)
+pp6 = ProjectPortfolio.create(project: project6, portfolio: portfolio2)

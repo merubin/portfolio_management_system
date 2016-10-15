@@ -1,0 +1,7 @@
+<h2>Users</h2>
+<ul>
+  <% @users.each do |user| %>
+    <li><%= link_to user.name, user %></li>
+    <img src="<%=user.avatar_url%>" alt=<%= user.name %> height="200" width=auto>
+  <% end %>
+</ul>

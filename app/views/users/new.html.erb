@@ -1,0 +1,19 @@
+<h2>New User Sign Up</h2>
+<%= form_for @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :userid %>
+  <%= f.text_field :userid %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :avatar_url %>
+  <%= f.url_field :avatar_url %>
+
+  <%= f.submit "Submit" %>
+<% end %>
