@@ -81,13 +81,26 @@ screen_img_url:"https://res.cloudinary.com/general-assembly-profiles/image/uploa
 host_url:"https://thawing-falls-93588.herokuapp.com/"
 })
 
+project1.user_id = user1;
+project1.save
 
 portfolio1 = user1.portfolios.create!({
 title:"Mike Rubin's Personal Portfolio",
 description:"Welcome to Mike Rubin's Web Development Portfolio. "
 })
+#
+# projectPortfolio1=ProjectPortfolio.create!({
+#  project_id: project1.id,
+#   })
 
-# portfolio2 = project5.portfolios.create!({
+# project1.portfolios.create(project_id:0)
+#
+# portfolio1 = user1.portfolios.create!({
+# title:"Mike Rubin's Personal Portfolio",
+# description:"Welcome to Mike Rubin's Web Development Portfolio. "
+# })
+#
+# # portfolio2 = project5.portfolios.create!({
 # title:"Up Dog Web Hosting Portfolio",
 # description:"Real. Simple.Hosting. Publish your own website for free using Dropbox. ",user: user2, project: project5
 # })
