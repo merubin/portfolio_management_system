@@ -1,0 +1,14 @@
+<h1>Project#index</h1>
+<p>Find me in app/views/project/index.html.erb</p>
+<ul>
+  <% i=0 %>
+  <% @projects.each do |project| %>
+  <label><input type="checkbox" id=<%="cbox" + i.to_s %> value=<%="id:"+project.id.to_s%>> <%=project.name %>></label><br>
+
+
+  <p> <%=project.description %> </p>
+  <% i=i+1 %>
+  <% end %>
+  <br>
+  <p> <%=i%> Total Projects for User <%=@current_user.name %>
+</ul>
