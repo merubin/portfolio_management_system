@@ -10,8 +10,7 @@
       <% i=0 %>
       <% @projects.each do |project| %>
 
-      <input name= <%="project#{i.to_s}"%> type="checkbox" id=<%="cbox" + i.to_s %> value=<%=project.id.to_s%>> <%=project.name %>><br>
-
+      <input name= <%="project#{i.to_s}"%> type="checkbox" id=<%="cbox" + i.to_s %> value=<%=project.id.to_s%>> <%=link_to project.name, user_project_path(@current_user.id,project.id) %>><br>
 
       <p> <%=project.description %> </p>
       <% i=i+1 %>

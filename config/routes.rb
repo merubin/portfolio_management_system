@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   resources :users
   resources :projects, only: [:index]
   resource :session   # Add this after the resources already in the file.
-  root 'Session#new'
+  root 'sessions#new'
 end

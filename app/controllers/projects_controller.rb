@@ -1,7 +1,6 @@
 class ProjectsController < ApplicationController
   def index
     if params[:user_id]== nil
-      @current_user=User.find(1)
       @projects=Project.all
     else
       @current_user=User.find(params[:user_id])
@@ -28,6 +27,7 @@ class ProjectsController < ApplicationController
 
 
   def show
+    @project= Project.find(params[:id])
   end
 
 

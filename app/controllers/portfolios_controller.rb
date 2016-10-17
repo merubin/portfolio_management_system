@@ -1,7 +1,11 @@
 class PortfoliosController < ApplicationController
   def show
-    @current_user = User.find(params[:id])
     @portfolio = Portfolio.find(params[:id])
+  end
+
+  def index
+    @portfolio= Portfolio.all
+
   end
 
   def new

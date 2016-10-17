@@ -1,2 +1,8 @@
-<h1>Project#show</h1>
-<p>Find me in app/views/project/show.html.erb</p>
+<h1>Show a Project</h1>
+<p> Project Name:<%=@project.name%></p>
+<p> Project Header1: <%=@project.header1%></p>
+<p> Project Header2:<%=@project.header2%></p>
+<p> Project Descritpion:<%=@project.description%></p>
+<p> Project Screen Capture URL:<%=@project.screen_img_url%></p>
+<p><img src="<%= @project.screen_img_url%>" alt=<%= @project.name %>><p>
+<p> Project Website Launch URL:<%=@project.screen_img_url%></p>
