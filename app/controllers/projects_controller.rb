@@ -1,21 +1,28 @@
 class ProjectsController < ApplicationController
   def index
-    @current_user=User.find(params[:user_id])
-    @projects=Project.where(user_id: params[:user_id])
+    if params[:user_id]== nil
+      @current_user=User.find(1)
+      @projects=Project.all
+    else
+      @current_user=User.find(params[:user_id])
+      @projects=Project.where(user_id: params[:user_id])
+    end
 
   end
 
   def new
         @current_user=User.find(params[:user_id])
         @project = Project.new
-        puts("completed new")
   end
 
   def create
-    puts("in create method")
+
     @current_user=User.find(params[:user_id])
     @project = @current_user.projects.create(project_params)
-    puts("just called build")
+
+#pp6 = ProjectPortfolio.create(project: project6, portfolio: portfolio2)
+
+
     redirect_to user_projects_path(@current_user)
   end
 
@@ -24,10 +31,18 @@ class ProjectsController < ApplicationController
   end
 
 
-  def show
+  def edit
+      @current_user=User.find(params[:user_id])
+      @project= Project.find(params[:id])
   end
 
   def update
+
+    @current_user=User.find(params[:user_id])
+    @project = @current_user.projects.create(project_params)
+
+    redirect_to user_projects_path(@current_user)
+
   end
 
   def destroy

@@ -21,7 +21,6 @@ user1 = User.create!({
   name: "Mike Rubin",
   userid: "merubin",
   password: "password",
-  email:"mike@rubinsworld.com",
   avatar_url:"http://mike-rubin.com/images/nav/id/rubin_selfie_270.png"
 })
 
@@ -29,7 +28,6 @@ user2 = User.create!({
   name: "Jessee Shawl",
   userid: "jshawl",
   password: "password",
-  email:"jesse@jshawl.com",
   avatar_url:"https://pbs.twimg.com/profile_images/494612822740197377/4ldXwgN5_400x400.jpeg"
 })
 

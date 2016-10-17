@@ -12,7 +12,8 @@ Rails.application.routes.draw do
     resources :projects, :portfolios
   end
 
-  resources :portfolios, only: [:show]
+  resources :portfolios, only: [:show,:index]
   resources :users
+  resources :projects, only: [:index]
   root 'menus#index'
 end

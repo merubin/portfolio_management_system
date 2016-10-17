@@ -2,16 +2,26 @@
 
 
 <h2><%= link_to "New Project",new_user_project_path(@current_user) %><h2>
-
-<ul>
-  <% i=0 %>
-  <% @projects.each do |project| %>
-  <label><input type="checkbox" id=<%="cbox" + i.to_s %> value=<%="id:"+project.id.to_s%>> <%=project.name %>></label><br>
+  <form method="get" action= "<%= new_user_portfolio_path(@current_user) %>" >
+    <button type="submit">New User Portfolio</button>
 
 
-  <p> <%=project.description %> </p>
-  <% i=i+1 %>
-  <% end %>
-  <br>
-  <p> <%=i%> Total Projects for User <%=@current_user.name %>
-</ul>
+    <ul>
+      <% i=0 %>
+      <% @projects.each do |project| %>
+
+      <input name= <%="project#{i.to_s}"%> type="checkbox" id=<%="cbox" + i.to_s %> value=<%=project.id.to_s%>> <%=project.name %>><br>
+
+
+      <p> <%=project.description %> </p>
+      <% i=i+1 %>
+      <% end %>
+      <br>
+      <p> <%=i%> Total Projects for User <%=@current_user.name %>
+      </ul>
+
+      <% @projects.each do |project| %>
+
+      <% end %>
+
+    </form>
