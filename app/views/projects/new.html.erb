@@ -1,2 +1,25 @@
 <h1>Project#new</h1>
 <p>Find me in app/views/project/new.html.erb</p>
+
+<h2>New project for User <%=@current_user.name%> </h2>
+<%= form_for [@current_user, @project] do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :header1 %>
+<%= f.text_field :header1%>
+
+<%= f.label :header2 %>
+<%= f.text_field :header2%>
+
+<%= f.label :description%>
+<%= f.text_area :description%>
+
+<%= f.label :screen_img_url %>
+<%= f.url_field :screen_img_url %>
+
+<%= f.label :host_url %>
+<%= f.url_field :host_url %>
+
+<%= f.submit "Submit" %>
+<% end %>
