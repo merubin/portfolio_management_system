@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+resource :session   # Add this after the resources already in the file.
 
 
    get '/menu/main' , to: 'menus#index' do
@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   resources :portfolios, only: [:show,:index]
   resources :users
   resources :projects, only: [:index]
-  root 'menus#index'
+  resource  :session
+  root 'Session#new'
 end
