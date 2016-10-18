@@ -1,5 +1,5 @@
 <h1>Show a Project</h1>
-<p> Project Name:<%=@project.name%></p>
+<p> Project Name:<%=@project.name%></p> <%=link_to "EDIT", edit_user_project_path(@current_user.id,@project.id) %>
 <p> Project Header1: <%=@project.header1%></p>
 <p> Project Header2:<%=@project.header2%></p>
 <p> Project Descritpion:<%=@project.description%></p>

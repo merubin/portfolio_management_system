@@ -39,9 +39,10 @@ class ProjectsController < ApplicationController
   def update
 
     @current_user=User.find(params[:user_id])
-    @project = @current_user.projects.create(project_params)
+   @project= Project.find(params[:id])
+   @project.update(project_params)
 
-    redirect_to user_projects_path(@current_user)
+    redirect_to user_project_path(@current_user,@project)
 
   end
 
