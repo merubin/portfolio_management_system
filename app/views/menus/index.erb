@@ -1,5 +1,20 @@
+<header>
+  <% if @current_user %>
+    <%= link_to "Welcome, #{@current_user.name}!", user_path(@current_user) %>
+    <%= link_to "Sign Out", session_path, method: :delete %>
+    <%= link_to "Main Menu" , menu_main_path %>
+  <% else %>
+    <%= link_to "Sign Up", new_user_path %>
+    <%= link_to "Sign In", new_session_path %>
+  <% end %>
+</header>
+
 <h1>MAIN MENU </h1>
 
 <h2><%= link_to "Show All Users",users_path %><h2>
-<h2><%= link_to "Show All Project",projects_path %>s<h2>
-  <h2><%= link_to "Show All Portfolios",portfolios_path %>s<h2>
+<h2><%= link_to "Show All Project",projects_path %><h2>
+  <h2><%= link_to "Show All Portfolios",portfolios_path %><h2>
+
+    <h1>   <%="Show By User #{@current_user.name}"%>"</h1>
+    <h2><%= link_to "Show User Projects",user_projects_path(@current_user) %><h2>
+    <h2><%= link_to "Show User Portfolios",user_portfolios_path(@current_user) %><h2>

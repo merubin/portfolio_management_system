@@ -1,9 +1,19 @@
+<header>
+  <% if @current_user %>
+    <%= link_to "Welcome, #{@current_user.name}!", user_path(@current_user) %>
+    <%= link_to "Sign Out", session_path, method: :delete %>
+    <%= link_to "Main Menu" , menu_main_path %>
+  <% else %>
+    <%= link_to "Sign Up", new_user_path %>
+    <%= link_to "Sign In", new_session_path %>
+  <% end %>
+</header>
 <h2>USER LIST: Current User=:<%=@current_user.name%></h2>
 <h2><%= link_to "New User",new_user_path %><h2>
 <ul>
   <% @users.each do |user| %>
     <li><%= link_to user.name, user %></li>
-    <img src="<%=user.avatar_url%>" alt=<%= user.name %> height="200" width=auto>
-    <%= link_to "Delete User #{user.name}",user_path(user), method: :delete %>
+    <p><img src="<%=user.avatar_url%>" alt=<%= user.name %> height="200" width=auto></p>
+    <p><%= link_to "Delete User #{user.name}",user_path(user), method: :delete %></p>
   <% end %>
 </ul>

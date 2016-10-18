@@ -1,4 +1,17 @@
-<h1>Projects for User <%=@current_user.name %></h1>
+<header>
+  <% if @current_user %>
+    <%= link_to "Welcome, #{@current_user.name}!", user_path(@current_user) %>
+    <%= link_to "Sign Out", session_path, method: :delete %>
+    <%= link_to "Main Menu" , menu_main_path %>
+  <% else %>
+    <%= link_to "Sign Up", new_user_path %>
+    <%= link_to "Sign In", new_session_path %>
+  <% end %>
+</header>
+
+<h1>Projects List for Portfolios  </h1>
+<p id="instructions"> Check the project boxes below to use to create a new portfolio then press the New User Portfolio Button </p>
+
 
 
 <h2><%= link_to "New Project",new_user_project_path(@current_user) %><h2>
@@ -10,13 +23,13 @@
       <% i=0 %>
       <% @projects.each do |project| %>
 
-      <input name= <%="project#{i.to_s}"%> type="checkbox" id=<%="cbox" + i.to_s %> value=<%=project.id.to_s%>> <%=link_to project.name, user_project_path(@current_user.id,project.id) %>><br>
+      <input name= <%="project#{i.to_s}"%> type="checkbox" id=<%="cbox" + i.to_s %> value=<%=project.id.to_s%>> <%=link_to project.name, user_project_path(@current_user.id,project.id) %><br>
 
       <p> <%=project.description %> </p>
       <% i=i+1 %>
       <% end %>
       <br>
-      <p> <%=i%> Total Projects for User <%=@current_user.name %>
+      <p> <%=i%> Total Projects  </p>
       </ul>
 
       <% @projects.each do |project| %>

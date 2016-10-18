@@ -1,3 +1,14 @@
+<header>
+  <% if @current_user %>
+    <%= link_to "Welcome, #{@current_user.name}!", user_path(@current_user) %>
+    <%= link_to "Sign Out", session_path, method: :delete %>
+    <%= link_to "Main Menu" , menu_main_path %>
+  <% else %>
+    <%= link_to "Sign Up", new_user_path %>
+    <%= link_to "Sign In", new_session_path %>
+  <% end %>
+</header>
+
 <h2>New User Sign Up</h2>
 <%= form_for @user do |f| %>
   <%= f.label :name %>

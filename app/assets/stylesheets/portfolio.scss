@@ -1,0 +1,130 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ body{
+ 	width: 100%;
+ 	font-size: 16px;
+ 	text-align: left;
+ 	background-color: rgba(236,242,246,.5);
+ 	color: #5b6164;
+ 	font-family: 'Helvetica Neue', Arial, sans-serif;
+ }
+
+ #show-portfolio-wrapper{
+ 	width: 100%;
+ }
+
+ #body-wrapper{
+ 	width: 100%;
+ 	margin: 0 auto;
+ 	padding: 40px 60px 40px 370px;
+ }
+
+
+ #title1 {
+ 	color: #000;
+ 	text-align: center;
+ 	font-size: 2.5em;
+ 	line-height: 1.3em;
+ 	padding-bottom: 30px;
+ 	border-bottom: 1px solid rgba(100,100,100,.2);
+  margin: 0 auto;
+ 	font-weight: 500;
+ }
+
+ #show-portfolio-wrapper nav{
+ 	background-color: #fff;
+ 	position: fixed;
+ 	width: 320px;
+ 	z-index: 1;
+ 	padding: 40px;
+ 	top: 0;
+ 	bottom: 0;
+ 	left: 0;
+ 	display: block;
+ 	text-align: center;
+ 	border-right: 1px solid rgba(227,227,227,.8);
+ }
+
+ #show-portfolio-wrapper nav img{
+ 	width: 160px;
+ 	margin-top: 40px;
+ }
+
+ /*  <--PORTFOLIO--->*/
+
+ #portfolio{
+ 	width: 100%;
+ 	padding-bottom: 40px;
+ 	max-width: 1200px;
+ 	margin-left: 0;
+ }
+
+ #portfolio h1{
+ 	width: 92%;
+ 	margin: 20px auto 40px auto;
+ }
+
+ .project-wrapper{
+ 	width: 40%;
+ 	float: left;
+ 	padding: 4%;
+ }
+
+ .project-wrapper img{
+ 	width: 100%;
+ 	border: 1px solid #e3e3e3;
+ }
+
+ .project-wrapper img:hover{
+ 	opacity: 0.8;
+ }
+
+ .project-info{
+ 	width: 100%;
+ 	padding: 30px 0 0 0;
+ 	border-bottom: 1px solid rgba(100,100,100,.2);
+ 	padding-bottom: 60px;
+ }
+
+ .project-info a{
+ 	font-size: 0.9em;
+ 	color: #5b6164;
+ 	line-height: 4.5em;
+ 	letter-spacing: 0.02em;
+ 	text-decoration: none;
+ 	font-weight: 500;
+ }
+
+ a.inline-link{
+ 	font-size: 1em;
+ 	color: #5b6164;
+ 	line-height: 1.5em;
+ 	text-decoration: underline;
+ 	font-weight: 400;
+ }
+
+ .project-info a:hover{
+ 	border-bottom: solid 1px #5b6164;
+     display: inline;
+     padding-bottom: 3px;
+ }
+
+ a.inline-link:hover{
+ 	border-bottom: none;
+ 	padding-bottom: 0;
+ 	color: #000;
+ }

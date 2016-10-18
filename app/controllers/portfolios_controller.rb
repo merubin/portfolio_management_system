@@ -1,10 +1,28 @@
 class PortfoliosController < ApplicationController
   def show
-    @portfolio = Portfolio.find(params[:id])
+
+
+    if params[:user_id]== nil
+      @portfolio = Portfolio.find(params[:id])
+    else
+      @current_user=User.find(params[:user_id])
+      @portfolio = Portfolio.find(params[:id])
+    end
+
+
+
   end
 
   def index
-    @portfolio= Portfolio.all
+
+    if params[:user_id]== nil
+      @portfolio = Portfolio.all
+    else
+      @current_user=User.find(params[:user_id])
+      @portfolio = @current_user.portfolios.all
+    end
+
+  
 
   end
 

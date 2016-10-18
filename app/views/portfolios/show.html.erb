@@ -2,6 +2,7 @@
 <div id="show-portfolio-wrapper">
   <nav>
     <div>
+      <p id="userid_title"><%=@current_user.name %></p><br>
       <a href="#"><img src="<%=@current_user.avatar_url%>" alt=<%= @current_user.name %> class="id"></a>
       <img src="/images/nav/seperator.png" alt="line">
     </div>

@@ -28,4 +28,10 @@ class SessionsController < ApplicationController
   end
 end
 
+
+def destroy
+  reset_session   # Delete all sessions
+  flash[:notice] = "You're signed out!"
+  redirect_to :root   # Send the user back to the homepage
+end
 end
