@@ -1,4 +1,5 @@
 class PortfoliosController < ApplicationController
+  before_action :authenticate_user, only: [:show]
   def show
 
 
@@ -8,8 +9,6 @@ class PortfoliosController < ApplicationController
       @current_user=User.find(params[:user_id])
       @portfolio = Portfolio.find(params[:id])
     end
-
-
 
   end
 
@@ -59,16 +58,20 @@ class PortfoliosController < ApplicationController
 
   redirect_to user_projects_path(@current_user)
 end
- def edit
-   @current_user=User.find(params[:user_id])
-   @portfoio= Portfolio.find(params[:id])
 
- end
+
+
+def edit
+
+  @current_user=User.find(params[:user_id])
+  @portfolio= Portfolio.find(params[:id])
+
+end
 
  def update
    @current_user=User.find(params[:user_id])
    @portfolio= Portfolio.find(params[:id])
-   @portfolio.update(project_params)
+   @portfolio.update(portfolio_params)
 
    redirect_to user_portfolios_path(@current_user,@portfolio)
 
@@ -79,6 +82,9 @@ end
    @current_user=User.find(params[:user_id])
    @portfolio= Portfolio.find(params[:id])
    @portfolio.destroy
+
+  @portfolio= Portfolio.all
+  redirect_to user_portfolios_path(@current_user,@portfolio)
  end
 
 
@@ -88,5 +94,8 @@ end
     params.require(:portfolio).permit(:title, :description, :user_id)
   end
 
+  def authenticate_user
+      redirect_to root_path unless params[:user_id]
+  end
 
 end

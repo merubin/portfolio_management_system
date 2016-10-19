@@ -25,7 +25,7 @@ user1 = User.create!({
 })
 
 user2 = User.create!({
-  name: "Jessee Shawl",
+  name: "Jesse Shawl",
   userid: "jshawl",
   password: "password",
   avatar_url:"https://pbs.twimg.com/profile_images/494612822740197377/4ldXwgN5_400x400.jpeg"

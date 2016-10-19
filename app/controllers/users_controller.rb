@@ -9,6 +9,9 @@ class UsersController < ApplicationController
   end
 
   def create
+    if params[:avatar_url] == nil || params[:avatar_url].length == 0
+      params[:avatar_url]="http://vignette1.wikia.nocookie.net/bokunoheroacademia/images/d/d5/NoPicAvailable.png/revision/latest?cb=20160326222204"
+    end
     @user = User.create(user_params)
     redirect_to users_path(@user)
   end
@@ -28,8 +31,23 @@ class UsersController < ApplicationController
   end
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
-    redirect_to users_path(@user)
+    # need to check if user has any projects
+    # @projects=@user.projects.find.try(@user)
+    # if @projects.id != nil
+    #   puts "++++++++++DELETING USERS WITH PROJECTS ++++++++++++++++"
+    #   p @projects
+    #   flash[:alert] = "User #{@user.name} cannot be deleted as he has active projects"
+    #   redirect_to user_projects_path(@user)
+    # else
+begin
+      @user.destroy
+      redirect_to users_path
+    rescue
+      flash[:alert] = "User #{@user.name} cannot be deleted as he has active projects"
+      redirect_to user_projects_path(@user)
+    end
+
+    # end
   end
 
   private

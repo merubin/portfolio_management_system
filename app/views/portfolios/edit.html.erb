@@ -8,16 +8,12 @@
     <%= link_to "Sign In", new_session_path %>
   <% end %>
 </header>
-<h1>Por#new</h1>
-<p>Find me in app/views/project/new.html.erb</p>
 
-<h2>New Portfolio for User <%=@current_user.name%> </h2>
-<h2> Projects to be added to this portfolio = <%=@projects%> </h2>
 
+<h2>Edit Portfolio for User <%=@current_user.name%> </h2>
 
 <%= form_for [@current_user, @portfolio] do |f| %>
 
-<%= hidden_field_tag :projects, @projects %>
 <%= f.label :title %>
 <%= f.text_field :title %>
 
