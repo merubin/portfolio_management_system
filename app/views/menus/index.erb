@@ -1,5 +1,6 @@
 <header>
   <% if @current_user %>
+    <h1>Project 2 - Mike Rubin Portfolio Managment System <h1><br>
     <%= link_to "Welcome, #{@current_user.name}!", user_path(@current_user) %>
     <%= link_to "Sign Out", session_path, method: :delete %>
     <%= link_to "Main Menu" , menu_main_path %>
