@@ -17,18 +17,18 @@ class PortfoliosController < ApplicationController
 
     if params[:user_id]== nil
       @portfolio = Portfolio.all
+      @at="All Users"
     else
       @current_user=User.find(params[:user_id])
+      @at="User #{@current_user.name}"
       @portfolio = @current_user.portfolios.all
     end
-
-  
 
   end
 
   def new
-    puts(params)
-    params[:projects]
+
+    flash[:notice] = "Creating a New Portfolio with the following Project id:#{params[:projects]}"
     # create a hash with priject id's
     proj_list=[]
     params.each do  |p1|
@@ -59,6 +59,29 @@ class PortfoliosController < ApplicationController
 
   redirect_to user_projects_path(@current_user)
 end
+ def edit
+   @current_user=User.find(params[:user_id])
+   @portfoio= Portfolio.find(params[:id])
+
+ end
+
+ def update
+   @current_user=User.find(params[:user_id])
+   @portfolio= Portfolio.find(params[:id])
+   @portfolio.update(project_params)
+
+   redirect_to user_portfolios_path(@current_user,@portfolio)
+
+ end
+
+
+ def destroy
+   @current_user=User.find(params[:user_id])
+   @portfolio= Portfolio.find(params[:id])
+   @portfolio.destroy
+ end
+
+
 
   private
   def portfolio_params

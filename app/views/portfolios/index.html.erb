@@ -8,8 +8,8 @@
     <%= link_to "Sign In", new_session_path %>
   <% end %>
 </header>
-<h2> All Portfolios </h2>
-<h2> Current logged in user= <%=@current_user.name %> </h2>
+<h2> Showing Portfolios for <%=@at%> </h2>
+
 <ul>
   <% @portfolio.each do |p| %>
 <li><%= link_to p.title ,portfolio_path(p) %></li>

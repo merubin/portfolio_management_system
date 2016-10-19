@@ -33,14 +33,27 @@
  	padding: 40px 60px 40px 370px;
  }
 
+#userid_title{
+  color: #000;
+  text-align: center;
+  margin-top:30px;
+  font-size: 2.5em;
+  line-height: 1.3em;
+  padding: 30px;
 
+  border-top:  1px solid rgba(100,100,100,.2);
+  border-bottom: 1px solid rgba(100,100,100,.2);
+  margin: 0 auto;
+  font-weight: 500;
+}
  #title1 {
  	color: #000;
  	text-align: center;
  	font-size: 2.5em;
  	line-height: 1.3em;
- 	padding-bottom: 30px;
+ 	padding: 30px;
  	border-bottom: 1px solid rgba(100,100,100,.2);
+  border-top:  1px solid rgba(100,100,100,.2);
   margin: 0 auto;
  	font-weight: 500;
  }
@@ -76,6 +89,31 @@
  #portfolio h1{
  	width: 92%;
  	margin: 20px auto 40px auto;
+ }
+
+
+ #social{
+ 	opacity: 0.8;
+ 	padding-bottom: 20px;
+ 	padding-top: 20px;
+ }
+
+ #social img{
+ 	width: 25px;
+ 	margin: 0 5px;
+ 	-webkit-transition: -webkit-transform .08s ease-in-out;
+   	transition: transform .08s ease-in-out;
+ }
+
+ #social img:hover{
+ 	-webkit-transform: rotate(9deg);
+   	transform: rotate(9deg);
+ }
+
+ #footer p{
+ 	color: #5b6164;
+ 	opacity: 0.3;
+ 	font-size: 0.7em;
  }
 
  .project-wrapper{

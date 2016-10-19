@@ -4,7 +4,8 @@
     <div>
       <p id="userid_title"><%=@current_user.name %></p><br>
       <a href="#"><img src="<%=@current_user.avatar_url%>" alt=<%= @current_user.name %> class="id"></a>
-      <img src="/images/nav/seperator.png" alt="line">
+        <%= image_tag "nav/seperator.png"  %>
+  
     </div>
     <ul>
       <li><a href="#">FUTURE About Page</a></li>
@@ -14,10 +15,9 @@
     </ul>
     <div id="footer">
       <div id="social">
-        <a href="#" target="_blank"><img src="images/nav/social/twitter.png" alt="twitter id"></a>
-        <a href="#" target="_blank"><img src="images/nav/social/email.png" alt="email id"></a>
-        <a href="#" target="_blank"><img src="images/nav/social/instagram.png" alt="instagram id"></a>
-
+        <%= image_tag "nav/social/twitter.png" %>
+        <%= image_tag "nav/social/email.png" %>
+        <%= image_tag "nav/social/instagram.png" %>
       </div>
       <div>
         <p>Copyright &copy; 2016 Rubin IT Solutions</p>
