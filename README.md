@@ -3,7 +3,7 @@
 
 # Portfolio Management System  - GA WDI-12 Project 2 By Mike Rubin
 
-The Portfolio Management System project is a full-stack application project  This program will  allow users to create a GA portfolio from the various projects they have completed.   During the course of a student’s WDI program they will create both projects and their portfolios.  This program will gather this information into a data model consisting of Users, Projects and Portfolils and allow a student to create a portfolio to show various projects. Portfolios can be created either from an individuals work or groups of individuals. This will allow work done to be created and shown in various ways allowing portfolios created by category that may fit the requirements of a specific job or employer.
+The Portfolio Management System project is a full-stack application project  This program will  allow users to create a GA portfolio from the various projects they have completed.   During the course of a student’s WDI program they will create both projects and their portfolios.  This program will gather this information into a data model consisting of Users, Projects and Portfolios and allow a student to create a portfolio to show various projects. Portfolios can be created either from an individuals work or groups of individuals. This will allow work done to be created and shown in various ways allowing portfolios created by category that may fit the requirements of a specific job or employer.
 
 ### User Stories
 
@@ -23,7 +23,7 @@ The Portfolio Management System project is a full-stack application project  Thi
 
 ### Technologies Used
 
-* Postgresql releational database
+* Postgresql relational database
 * Ruby on Rails with added sessions for user security
 * HTML was used only for structuring content.
 * CSS was used for applying all visual styles.
@@ -45,24 +45,12 @@ git clone git@github.com:merubin/portfolio_management_system.git
 
 ## Approach Taken
 
-The game was written to act a a finite state machine. After the game is started, the game traverses through
-various states of play from level zero, or game start, through level six, or Game Over, where the user has lost.  
-At each level a check is made to see if a Win has happened.
-
-Associated with each state level is a Hangman level class. The javascript keeps track of the level and changes the game board by removing and adding the old and new class name representative of that level.  This will then adjust the
-game-board with the correct picture of the correct body part hanging from the gallows.
-
-A hangman object was created to keep the state of the game, the keyboard and the current words of the game.
-
-The words for the game are stored as content int he HTML file.  Meta tags were used to store words, categories and URL's to images that relate to the current game.  By adding a new meta tag, the game can be expanded.
+This full-stack application was begun with the end in mind. I reviewed my current portfolio which I have hosted at mike-rubin.com and determined what data model I could represent it by. I built an initial ERD using draw.io and then began to map out the various screens I would need to show the functionality and screen design. The applications features a menu that allows easy access to the various projects or portfolio screens there you can edit and add additional 
 
 
 ## Future Features
 
-The game in its current form is feature complete at the GOLD level.  The MVP Bronze for this game was to get one topic and one word list created and working.  The Silver version added multiple categories.  The gold version added the background images.
-
-Future versions could be added to give the user a choice of which category to play from.  In addition, a timer could be used to score how long it took to win.  This could be saved or stored up on the cloud to compete with other users.  Further updates could consolidate the words up on the cloud, so that any list could be shard across all users.
-
+Currently this application needs work with CSS styling.  A future enhancment would allow for each portfolio to include its own styling pages which would allow for a different style for each portfolio.
 
 ## Authors
 

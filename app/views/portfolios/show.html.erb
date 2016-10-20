@@ -5,7 +5,7 @@
       <p id="userid_title"><%=@current_user.name %></p><br>
       <a href="#"><img src="<%=@current_user.avatar_url%>" alt=<%= @current_user.name %> class="id"></a>
         <%= image_tag "nav/seperator.png"  %>
-  
+
     </div>
     <ul>
       <li><a href="#">FUTURE About Page</a></li>
@@ -33,13 +33,16 @@
       <% @portfolio.projects.each do |project| %>
         <!-- memory game portfolio start -->
         <div class="project-wrapper">
+
+            <h2><a href="<%=project.host_url%>"><%= project.name %></a></h2>
           <a href="<%= project.host_url%>">
             <img src="<%= project.screen_img_url%>" alt=<%= project.name %>>
           </a>
           <div class="project-info">
-            <h2><%= project.name %> </h2>
-              <p><a href="<%=project.host_url%>"><%= project.name %></a></p>
 
+
+               <h2><%= project.header1 %> </h2>
+              <h2><%= project.header2 %> </h2>
             <p class="description"><%= project.description %></p>
           </div>
         </div>

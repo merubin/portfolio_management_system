@@ -44,12 +44,12 @@ class PortfoliosController < ApplicationController
   end
 
   def create
-
+    # Create the Portfolio Records
     @current_user=User.find(params[:user_id])
     @portfolio= @current_user.portfolios.create(portfolio_params)
 
     proj_list= params[:projects].split(" ")
-    #ceate index record
+    #create Project-portfolio index records
       proj_list.each do   |p|
 
       project=Project.find(p.to_i)

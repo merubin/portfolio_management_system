@@ -15,22 +15,22 @@
 <h2>New project for User <%=@current_user.name%> </h2>
 <%= form_for [@current_user, @project] do |f| %>
 <%= f.label :name %>
-<%= f.text_field :name %>
+<%= f.text_field :name %><br><br>
 
 <%= f.label :header1 %>
-<%= f.text_field :header1%>
+<%= f.text_field :header1%><br><br>
 
 <%= f.label :header2 %>
-<%= f.text_field :header2%>
+<%= f.text_field :header2%> <br><br><br>
 
 <%= f.label :description%>
-<%= f.text_area :description%>
+<%= f.text_area :description%><br><br><br>
 
 <%= f.label :screen_img_url %>
-<%= f.url_field :screen_img_url %>
+<%= f.url_field :screen_img_url %><br><br>
 
 <%= f.label :host_url %>
-<%= f.url_field :host_url %>
+<%= f.url_field :host_url %><br><br><br>
 
 <%= f.submit "Submit" %>
 <% end %>
