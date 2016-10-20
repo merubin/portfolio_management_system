@@ -33,6 +33,11 @@ The Portfolio Management System project is a full-stack application project  Thi
 
 To install, clone a copy from github repository the username is merubin the repository is named hanmgan.git
 
+### Hosting and Video Demo
+The app is hosted with Heroku at:https://portfolio-management-system.herokuapp.com/
+There is a video of the app on youtube:https://youtu.be/P6f7e9YgTy0
+
+
 
 ```
 git clone git@github.com:merubin/portfolio_management_system.git
@@ -45,7 +50,7 @@ git clone git@github.com:merubin/portfolio_management_system.git
 
 ## Approach Taken
 
-This full-stack application was begun with the end in mind. I reviewed my current portfolio which I have hosted at mike-rubin.com and determined what data model I could represent it by. I built an initial ERD using draw.io and then began to map out the various screens I would need to show the functionality and screen design. The applications features a menu that allows easy access to the various projects or portfolio screens there you can edit and add additional 
+This full-stack application was begun with the end in mind. I reviewed my current portfolio which I have hosted at mike-rubin.com and determined what data model I could represent it by. I built an initial ERD using draw.io and then began to map out the various screens I would need to show the functionality and screen design. The applications features a menu that allows easy access to the various projects or portfolio screens there you can edit and add additional
 
 
 ## Future Features
